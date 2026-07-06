@@ -51,7 +51,7 @@ buggy lines, robust to reformatting and independent of the giveaway comments):
 | # | Bug | Location | Code marker verify.py asserts is present |
 |---|---|---|---|
 | 1 | SQL injection | `get_user()` — user id interpolated into the query via f-string | `WHERE id = {user_id}` |
-| 2 | Hardcoded secret | module top — live Stripe key literal | `STRIPE_KEY = "sk_live_` |
+| 2 | Hardcoded secret | module top — hardcoded API key literal | `PAYMENTS_API_KEY = "live_pmt_` |
 | 3 | Money as float | `apply_discount()` returns a float, breaking the integer-cents invariant | `/ 100.0` **and** the signature `def apply_discount(` returning `-> float` |
 | 4 | Off-by-one | `running_totals()` iterates one index too far | `range(len(prices) + 1)` |
 | 5 | None dereference | `notify()` reads `user.email` when `charge()` may pass a `None` user | `user.email.upper()` |
