@@ -1,0 +1,7 @@
+# harness-only files — never ship to the student repo
+SPEC.md
+verify.py
+logs/
+__pycache__/
+*.pyc
+.DS_Store
